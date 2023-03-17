@@ -10,3 +10,6 @@ I will draw the black lines/grids as the background, so instead of having the li
 
 Iteration 13/03
 Will cancel the sliding motion. Instead, make the color blocks look like they are "breathing": the color blocks will change in size proportionally (they go large - small - large - small...). 
+
+iteration 17/03
+it might look cool if I outline all the color blocks and remove some of the lines.... so when the color blocks are moving they move like colorful bricks...?
