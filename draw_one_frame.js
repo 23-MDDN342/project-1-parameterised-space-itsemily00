@@ -23,30 +23,61 @@ function draw_one_frame(cur_frac){
 
 /////DRAW THE COLOR BLOCKS/////
 let mainRed = color("#ed1e1a"); // red
-mainRed.setAlpha(180); //https://p5js.org/reference/#/p5.Color/setAlpha
+mainRed.setAlpha(220); //https://p5js.org/reference/#/p5.Color/setAlpha
 let backupRed = color("#bf0f0b"); //scarlet
 backupRed.setAlpha(180);
+
+let mainYellow = color("#e8bb25"); //yellow
+let mainBlue = color("#252ce8"); //blue
 
 let noiseRed;
 let blockSize = 10;
 let minSize = 1;
-let maxSize = 100;
+//let maxSize = 10;
 let rectX = 0;
 let rectY = 0;
 
 
+
+
+
+let scaledSize;
+
+if(cur_frac <= 0.5){
+ scaledSize = map(cur_frac, 0, 0.5, 1, 1.5); //color block expands
+} else {
+ scaledSize = map(cur_frac, 0.5, 1, 1.5, 1); //color block shrinks
+}
+
+push();
 fill(mainRed);
 noStroke();
-rectMode(CENTER);
-let scaledSize = map(cur_frac, 0, 1, 0.1, 5);
-push();
-translate(265, 150);
-scale(scaledSize, scaledSize);
-rect(0, 0, 130, 100);
+rectMode(CENTER); 
+translate(265, 140); //translate the rect to the grid
+scale(scaledSize);
+rect(0, 0, 130, 80);
 pop(); 
-blockSize = (blockSize % maxSize) + 1; //chatGPT
+
+push();
+fill(mainRed);
+noStroke();
+rectMode(CENTER); 
+translate(660, 384);
+scale(scaledSize);
+rect(0, 0, 40, 30);
+pop();
+
+push();
+fill(mainYellow);
+noStroke();
+rectMode(CENTER); 
+translate(523, 125);
+scale(scaledSize);
+rect(0, 0, 48, 45);
+pop();
 
 
+ 
 
 /////DRAW THE GRID/////
 	push();
@@ -60,18 +91,31 @@ blockSize = (blockSize % maxSize) + 1; //chatGPT
 	strokeWeight(5);
 	horizontal_lines(200, 100, 500);
 	horizontal_lines(500, 150, 300);
-	horizontal_lines(600, 350, 220);
+	horizontal_lines(150, 180, 180);
+	horizontal_lines(330, 280, 120);
+	horizontal_lines(170, 330, 120);
+	horizontal_lines(200, 360, 130);
+	horizontal_lines(620, 370, 60);
 	vertical_lines(200, 80, 350);
+	vertical_lines(240, 180, 70);
+	vertical_lines(290, 250, 110);
 	vertical_lines(450, 200, 300);
+	vertical_lines(500, 100, 100);
+	vertical_lines(550, 100, 50);
+	vertical_lines(640, 370, 30);
 	vertical_lines(680, 30, 370);
+	vertical_lines(870, 380, 50);
 	pop();
 
 	push();
 	strokeWeight(8.5);
 	horizontal_lines(330, 200, 200);
 	horizontal_lines(450, 310, 170);
-	horizontal_lines(150, 400, 180);
+	//horizontal_lines(150, 400, 180);
+
 	vertical_lines(330, 50, 400);
+	vertical_lines(530, 195.8, 110);
+	vertical_lines(620, 306, 95);
 	pop();
 
 
@@ -89,44 +133,4 @@ function vertical_lines(lineX1, lineY1, lineLength){
 	stroke(0);
 	strokeCap(SQUARE);
 	line(lineX1, lineY1, lineX1, lineY1+lineLength);
-}
-
-function redBlocks(){
-	// let orbSize = width / 20
-	// let spacingSize = width / 19;
-	// let mainRed = color("#ed1e1a"); // red
-	// mainRed.setAlpha(180); //https://p5js.org/reference/#/p5.Color/setAlpha
-	// let backupRed = color("#bf0f0b"); //scarlet
-	// backupRed.setAlpha(180);
-	
-	// let noiseRed;
-	// let sizeMap;
-	// let mainColor = color("#3F292B") // brown
-	
-	//noiseRed = getNoiseValue(spacingSize*accross,spacingSize*down, 0.8, "noiseRed",0,1, 200 )
-	
-	
-	// for(let across = 1; across < 130; across++){
-	// 	noiseRed = getNoiseValue(spacingSize*across, 100, 0.8, "noiseRed",0,1, 200 )
-	// 	noiseRedLerp = lerpColor(mainRed,backupRed,noiseRed)  // https://p5js.org/reference/#/p5/lerpColor
-	
-	// 	fill(noiseRedLerp);
-	// 	noStroke();
-	// 	rectMode(CENTER);
-	// 	rect(200, 100, 130, 100);
-	// }
-
-	// let blockSize = 10;
-	// let minSize = 1;
-	// let maxSize = 100;
-	// let rectX = 200;
-	// let rectY = 100;
-
-	// fill(mainRed);
-	// noStroke();
-	// let scaledSize = map(blockSize, minSize, maxSize, 0.1, 5);
-	// scale(scaledSize);
-	// rect(rectX, rectY, 130, 100);
-	// blockSize = (blockSize % maxSize) + 1;
-
 }
