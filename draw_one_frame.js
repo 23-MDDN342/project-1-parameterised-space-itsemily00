@@ -22,13 +22,13 @@ function draw_one_frame(cur_frac){
 
 
 /////DRAW THE COLOR BLOCKS/////
-let mainRed = color("#ed1e1a"); // red
+let mainRed = color("#e03015"); // red
 
 let backupRed = color("#bf0f0b"); //scarlet
 
 
-let mainYellow = color("#e8bb25"); //yellow
-let mainBlue = color("#252ce8"); //blue
+let mainYellow = color("#e6b628"); //yellow
+let mainBlue = color("#3679d1"); //blue
 // mainRed.setAlpha(200); //https://p5js.org/reference/#/p5.Color/setAlpha
 // mainYellow.setAlpha(200);
 // mainBlue.setAlpha(200);
@@ -39,17 +39,20 @@ let mainBlue = color("#252ce8"); //blue
 
 let scaledSize;
 let scaledSize2;
+let scaledSize3;
+//movement 1
 if(cur_frac <= 0.5){
  scaledSize = map(cur_frac, 0, 0.5, 1, 1.2); //color block expands
 } else {
  scaledSize = map(cur_frac, 0.5, 1, 1.2, 1); //color block shrinks
 }
-//different movement
+//movement 2
 if(cur_frac <= 0.6 && cur_frac >= 0.3){
 	scaledSize2 = map(cur_frac, 0.3, 0.6, 1, 1.2); //color block expands
    } if(cur_frac > 0.6) {
 	scaledSize2 = map(cur_frac, 0.6, 1, 1.2, 1); //color block shrinks
    }
+   
 
 // push();
 // fill(mainRed);
@@ -146,7 +149,7 @@ if(cur_frac <= 0.6 && cur_frac >= 0.3){
 	strokeWeight(4);
 	rectMode(CENTER); 
 	translate(660, 384);
-	scale(scaledSize);
+	scale(scaledSize2);
 	rect(0, 0, 40, 30);
 	pop();
 	
@@ -181,6 +184,37 @@ if(cur_frac <= 0.6 && cur_frac >= 0.3){
 	rect(0, 0, 87, 78);
 	pop(); 
 	
+	push(); // static red
+	fill(mainRed);
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(390, 240); 
+	//scale(scaledSize);
+	rect(0, 0, 119, 79);
+	pop(); 
+
+	push(); // static blue
+	fill(mainBlue);
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(491, 270); 
+	//scale(scaledSize);
+	rect(0, 0, 82, 86);
+	pop(); 
+
+	push(); // white
+	fill(255);
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(490.5, 220); 
+	scale(scaledSize2);
+	rect(0, 0, 83, 39);
+	pop(); 
+
+
 	push();
 	fill(mainBlue);
 	//noStroke();
@@ -190,6 +224,49 @@ if(cur_frac <= 0.6 && cur_frac >= 0.3){
 	translate(525.5, 165);
 	scale(scaledSize);
 	rect(0, 0, 46.5, 30);
+	pop();
+
+	push(); //static yellow
+	fill(mainYellow);
+	//noStroke();
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(536, 324);
+	//scale(scaledSize);
+	rect(0, 0, 172, 35);
+	pop();
+
+	push(); // white down
+	fill(255);
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(577, 280); 
+	scale(scaledSize);
+	rect(0, 0, 88, 52);
+	pop(); 
+
+	push();
+	fill(mainRed);
+	//noStroke();
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(604, 370);
+	scale(scaledSize);
+	rect(0, 0, 25, 55);
+	pop();
+
+	push();
+	fill(mainBlue);
+	//noStroke();
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(652, 354);
+	scale(scaledSize);
+	rect(0, 0, 54, 28);
 	pop();
 
 	push(); //static black block
