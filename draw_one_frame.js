@@ -142,6 +142,33 @@ if(cur_frac <= 0.6 && cur_frac >= 0.3){
 	scale(scaledSize);
 	rect(0, 0, 130, 53.5);
 	pop(); 
+
+	push(); //static black block small
+	fill(0);
+	noStroke();
+	rectMode(CENTER); 
+	translate(665, 115);
+	//scale(scaledSize);
+	rect(0, 0, 30, 30);
+	pop();
+
+	push(); //static black block long
+	fill(0);
+	noStroke();
+	rectMode(CENTER); 
+	translate(415, 185);
+	//scale(scaledSize);
+	rect(0, 0, 150, 20);
+	pop();
+
+	push(); //static black block
+	fill(0);
+	noStroke();
+	rectMode(CENTER); 
+	translate(631, 383);
+	//scale(scaledSize);
+	rect(0, 0, 15, 31);
+	pop();
 	
 	push(); //red on the right bottom
 	fill(mainRed);
@@ -203,6 +230,16 @@ if(cur_frac <= 0.6 && cur_frac >= 0.3){
 	//scale(scaledSize);
 	rect(0, 0, 82, 86);
 	pop(); 
+	
+	push(); // static blue
+	fill(mainBlue);
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(577, 226); 
+	//scale(scaledSize);
+	rect(0, 0, 90, 54);
+	pop(); 
 
 	push(); // white
 	fill(255);
@@ -237,6 +274,8 @@ if(cur_frac <= 0.6 && cur_frac >= 0.3){
 	rect(0, 0, 172, 35);
 	pop();
 
+	
+
 	push(); // white down
 	fill(255);
 	stroke(0);
@@ -269,14 +308,7 @@ if(cur_frac <= 0.6 && cur_frac >= 0.3){
 	rect(0, 0, 54, 28);
 	pop();
 
-	push(); //static black block
-	fill(0);
-	noStroke();
-	rectMode(CENTER); 
-	translate(631, 383);
-	//scale(scaledSize);
-	rect(0, 0, 15, 31);
-	pop();
+	
 
 	push();
 	fill(mainBlue);
