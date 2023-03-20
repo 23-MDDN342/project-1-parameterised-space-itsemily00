@@ -42,9 +42,9 @@ let scaledSize2;
 let scaledSize3;
 //movement 1
 if(cur_frac <= 0.5){
- scaledSize = map(cur_frac, 0, 0.5, 1, 1.2); //color block expands
+ scaledSize = map(cur_frac, 0, 0.5, 1.1, 1.3); //color block expands
 } else {
- scaledSize = map(cur_frac, 0.5, 1, 1.2, 1); //color block shrinks
+ scaledSize = map(cur_frac, 0.5, 1, 1.3, 1.1); //color block shrinks
 }
 //movement 2
 if(cur_frac <= 0.6 && cur_frac >= 0.3){
@@ -156,9 +156,9 @@ if(cur_frac <= 0.6 && cur_frac >= 0.3){
 	fill(0);
 	noStroke();
 	rectMode(CENTER); 
-	translate(415, 185);
+	translate(416, 188);
 	//scale(scaledSize);
-	rect(0, 0, 150, 20);
+	rect(0, 0, 164, 20);
 	pop();
 
 	push(); //static black block
@@ -176,7 +176,7 @@ if(cur_frac <= 0.6 && cur_frac >= 0.3){
 	strokeWeight(4);
 	rectMode(CENTER); 
 	translate(660, 384);
-	scale(scaledSize2);
+	//scale(scaledSize2);
 	rect(0, 0, 40, 30);
 	pop();
 	
@@ -188,7 +188,7 @@ if(cur_frac <= 0.6 && cur_frac >= 0.3){
 	rectMode(CENTER); 
 	translate(525.5, 125);
 	scale(scaledSize2);
-	rect(0, 0, 46.5, 46);
+	rect(0, 0, 48, 48);
 	pop();
 
 	push(); //yellow on the very left
@@ -200,6 +200,17 @@ if(cur_frac <= 0.6 && cur_frac >= 0.3){
 	scale(scaledSize);
 	rect(0, 0, 41, 70);
 	pop();
+
+	push(); //static yellow
+	fill(mainYellow);
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(245, 345);
+	//scale(scaledSize);
+	rect(0, 0, 88, 30);
+	pop();
+
 
 	push(); // red next to blue
 	fill(mainRed);
@@ -237,7 +248,7 @@ if(cur_frac <= 0.6 && cur_frac >= 0.3){
 	strokeWeight(4);
 	rectMode(CENTER); 
 	translate(577, 226); 
-	//scale(scaledSize);
+	//scale(scaledSize2);
 	rect(0, 0, 90, 54);
 	pop(); 
 
@@ -259,8 +270,8 @@ if(cur_frac <= 0.6 && cur_frac >= 0.3){
 	strokeWeight(4);
 	rectMode(CENTER); 
 	translate(525.5, 165);
-	scale(scaledSize);
-	rect(0, 0, 46.5, 30);
+	scale(scaledSize2);
+	rect(0, 0, 48.5, 30);
 	pop();
 
 	push(); //static yellow
