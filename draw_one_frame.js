@@ -7,12 +7,6 @@
      min/max: the minimum and maximum of the value to return
      smoothness: 1 means elements are not related. larger numbers cause groupings.
 */
-let lineX1 = 200;
-let lineY1 = 200;
-let lineY2 = 400;
-let lineLength = 400;
-//let lineX2 = lineX1+frameCount*5;
-
 
 function draw_one_frame(cur_frac){
 	let backgroundColor = color("#fffff");
@@ -28,12 +22,11 @@ let backupRed = color("#bf0f0b"); //scarlet
 
 
 let mainYellow = color("#e6b628"); //yellow
-let mainBlue = color("#3679d1"); //blue
-// mainRed.setAlpha(200); //https://p5js.org/reference/#/p5.Color/setAlpha
-// mainYellow.setAlpha(200);
-// mainBlue.setAlpha(200);
-
-
+// let mainBlue = color("#3679d1"); //blue
+let mainBlue = color("#3733a1"); //blue
+// mainRed.setAlpha(210); //https://p5js.org/reference/#/p5.Color/setAlpha
+// mainYellow.setAlpha(210);
+// mainBlue.setAlpha(210);
 
 
 
@@ -42,174 +35,264 @@ let scaledSize2;
 let scaledSize3;
 //movement 1
 if(cur_frac <= 0.5){
- scaledSize = map(cur_frac, 0, 0.5, 1.1, 1.3); //color block expands
+ scaledSize = map(cur_frac, 0, 0.5, 1.1, 1.25); //color block expands
 } else {
- scaledSize = map(cur_frac, 0.5, 1, 1.3, 1.1); //color block shrinks
+ scaledSize = map(cur_frac, 0.5, 1, 1.25, 1.1); //color block shrinks
 }
 //movement 2
-if(cur_frac <= 0.6 && cur_frac >= 0.3){
-	scaledSize2 = map(cur_frac, 0.3, 0.6, 1, 1.2); //color block expands
-   } if(cur_frac > 0.6) {
-	scaledSize2 = map(cur_frac, 0.6, 1, 1.2, 1); //color block shrinks
+   if(cur_frac <= 0.5){
+	scaledSize2 = map(cur_frac, 0, 0.5, 1.13, 1); //color block expands
+   } else {
+	scaledSize2 = map(cur_frac, 0.5, 1, 1, 1.13); //color block shrinks
    }
-   
 
-// push();
-// fill(mainRed);
-// noStroke();
-// rectMode(CENTER); 
-// translate(265, 140); //translate the rect to the grid
-// scale(scaledSize);
-// rect(0, 0, 130, 80);
-// pop(); 
-
-// push();
-// fill(mainRed);
-// stroke(0);
-// strokeWeight(4);
-// rectMode(CENTER); 
-// translate(660, 384);
-// scale(scaledSize);
-// rect(0, 0, 40, 30);
-// pop();
-
-// push();
-// fill(mainYellow);
-// noStroke();
-// rectMode(CENTER); 
-// translate(523, 125);
-// scale(scaledSize);
-// rect(0, 0, 48, 45);
-// pop();
-
-
- 
 
 /////DRAW THE GRID/////
-	push();
-	strokeWeight(3);
-	horizontal_lines(80, 250, 250);
-	horizontal_lines(450, 400, 450);
-	vertical_lines(800, 300, 150);
-	pop();
+	// push();
+	// strokeWeight(3);
+	// horizontal_lines(80, 250, 250);
+	// horizontal_lines(450, 400, 450);
+	// vertical_lines(800, 300, 150);
+	// pop();
 
 	push();
 	strokeWeight(4);
-	horizontal_lines(200, 100, 540);
-	horizontal_lines(200, 150, 130);
-	horizontal_lines(500, 150, 52)
-	horizontal_lines(150, 180, 530);
-	horizontal_lines(530, 198.3, 360);
-	horizontal_lines(450, 240, 80);
-	horizontal_lines(330, 280, 120);
-	horizontal_lines(170, 330, 120);
-	horizontal_lines(200, 360, 130);
-	horizontal_lines(450, 340, 380); //中间大长方形的水平分割线
-	horizontal_lines(620, 370, 60);
-	vertical_lines(200, 80, 350);
-	vertical_lines(240, 180, 70);
-	vertical_lines(290, 250, 110);
-	vertical_lines(450, 200, 300);
-	vertical_lines(500, 100, 100);
-	vertical_lines(550, 100, 80);
-	vertical_lines(590, 340, 120);//中间的大长方形垂直分割
-	vertical_lines(640, 370, 30);
-	vertical_lines(621.7, 200, 110);
-	vertical_lines(680, 30, 370);
-	vertical_lines(870, 380, 50);
+	horizontal_lines(150, 100, 50);
+	// //horizontal_lines(200, 150, 130);
+	// horizontal_lines(500, 150, 52)
+	// horizontal_lines(150, 180, 530);
+	// horizontal_lines(530, 198.3, 360);
+	// horizontal_lines(450, 240, 80);
+	// horizontal_lines(330, 280, 120);
+	// horizontal_lines(170, 330, 120);
+	// horizontal_lines(200, 360, 130);
+	// horizontal_lines(450, 340, 380); //中间大长方形的水平分割线
+	// horizontal_lines(620, 370, 60);
+	vertical_lines(200, 70, 350-289.8);
+	// vertical_lines(240, 180, 70);
+	// vertical_lines(290, 250, 110);
+	// vertical_lines(450, 200, 300);
+	// vertical_lines(500, 100, 100);
+	// vertical_lines(550, 100, 80);
+	// vertical_lines(590, 340, 120);//中间的大长方形垂直分割
+	// vertical_lines(640, 370, 30);
+	// vertical_lines(621.7, 200, 110);
+	// vertical_lines(680, 30, 370);
+	// vertical_lines(870, 380, 50);
 	pop();
 
-	push();
-	strokeWeight(8);
-	horizontal_lines(330, 200, 200);
-	horizontal_lines(450, 310, 170);
+	// push();
+	// strokeWeight(8);
+	// horizontal_lines(330, 200, 200);
+	// horizontal_lines(450, 310, 170);
 
-	vertical_lines(330, 50, 400);
-	vertical_lines(530, 195.9, 110);
-	vertical_lines(620, 306, 95);
-	vertical_lines(650, 60, 120);
-	pop();
-
-
+	// vertical_lines(330, 50, 400);
+	// vertical_lines(530, 195.9, 110);
+	// vertical_lines(620, 306, 95);
+	// vertical_lines(650, 60, 120);
+	// pop();
+ 
 
 /////DRAW THE COLOR BLOCKS/////
+	push(); //static black block small
+	fill(0);
+	noStroke();
+	rectMode(CENTER); 
+	translate(265, 100);
+	rect(0, 0, 70, 30);
+	pop();
+
 	push(); // red on top left
 	fill(mainRed);
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(265, 125); 
-	scale(scaledSize);
-	rect(0, 0, 130, 53.5);
+	translate(265-20, 125-0.1); 
+	scale(1);
+	rect(0, 0, 130-40, 50.2);
 	pop(); 
 
-	push(); //static black block small
+	push(); // blue next to red on top left
+	fill(mainBlue);
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(310-1, 125-0.2-22.5); 
+	scale(1);
+	rect(0, 0, 40, 50.2+45);
+	pop(); 
+
+	push(); // yellow on the left middle
+	fill(mainYellow);
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(290, 219); 
+	rect(0, 0, 119, 79);
+	pop(); 
+
+	
+
+
+	push(); //static black 
 	fill(0);
 	noStroke();
 	rectMode(CENTER); 
-	translate(665, 115);
+	translate(350, 150);
 	//scale(scaledSize);
-	rect(0, 0, 30, 30);
+	rect(0, 0, 40, 70);
 	pop();
 
-	push(); //static black block long
-	fill(0);
-	noStroke();
+	push(); //第一行第二个蓝色
+	fill(mainBlue);
+	stroke(0);
+	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(416, 188);
+	translate(395, 150);
 	//scale(scaledSize);
-	rect(0, 0, 164, 20);
+	rect(0, 0, 85, 70);
 	pop();
 
 	push(); //static black block
 	fill(0);
 	noStroke();
 	rectMode(CENTER); 
-	translate(631, 383);
+	translate(0, 383);
 	//scale(scaledSize);
-	rect(0, 0, 15, 31);
-	pop();
-	
-	push(); //red on the right bottom
-	fill(mainRed);
-	stroke(0);
-	strokeWeight(4);
-	rectMode(CENTER); 
-	translate(660, 384);
-	//scale(scaledSize2);
-	rect(0, 0, 40, 30);
-	pop();
-	
-	push(); //yellow horizontal to the top left red
-	fill(mainYellow);
-	//noStroke();
-	stroke(0);
-	strokeWeight(4);
-	rectMode(CENTER); 
-	translate(525.5, 125);
-	scale(scaledSize2);
-	rect(0, 0, 48, 48);
+	rect(0, 0, 165, 15);
 	pop();
 
-	push(); //yellow on the very left
-	fill(mainYellow);
+	push(); // static blue on the very left small small!
+	fill(mainBlue);
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(221, 215);
-	scale(scaledSize);
-	rect(0, 0, 41, 70);
-	pop();
+	translate(185, 390); 
+	scale(1.1);
+	rect(0, 0, 15, 45);
+	pop(); 
+
+	
 
 	push(); //static yellow
 	fill(mainYellow);
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(245, 345);
-	//scale(scaledSize);
-	rect(0, 0, 88, 30);
+	translate(240, 350);
+	rect(0, 0, 180, 35);
 	pop();
+
+	
+
+	push(); //static yellow
+	fill(mainYellow);
+	//noStroke();
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(400, 300);
+	//scale(scaledSize);
+	rect(0, 0, 72, 90);
+	pop();
+
+	
+
+	push(); // white bottom right
+	fill(255);
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(730, 425); 
+	rect(0, 0, 180, 50);
+	pop(); 
+	
+	push(); // static blue
+	fill(mainBlue);
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(740, 354); 
+	//scale(scaledSize2);
+	rect(0, 0, 90, 90);
+	pop(); 
+
+	push(); // white in th emid
+	fill(255);
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(490.5, 220); 
+	scale(1.2);
+	rect(0, 0, 83, 39);
+	pop(); 
+
+	push(); //squre white
+	fill(255);
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(354, 285); 
+	rect(0, 0, 50, 50);
+	pop(); 
+
+	push(); //vertical red
+	fill(mainRed);
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(636, 233);
+	rect(0, 0, 26, 104);
+	pop();
+
+	push();
+	fill(mainBlue);
+	//noStroke();
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(525.5+74, 165);
+	scale(1.1);
+	rect(0, 0, 48.5+42, 27);
+	pop();
+
+///////////////////////////////////////////////
+///COLOR BLOCKS WITH MOVEMENTS
+	push(); // white at bottom left
+	fill(255);
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(225, 400); 
+	scale(scaledSize2);
+	rect(0, 0, 65, 65);
+	pop(); 
+
+	push(); //white under red on top left
+	fill(255);
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(251, 165); 
+	scale(scaledSize);
+	rect(0, 0, 145, 30);
+	pop(); 
+	
+
+
+	push(); // red big one in the middle
+	fill(mainRed);
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(389, 219); 
+	scale(scaledSize2);
+	rect(0, 0, 119, 79);
+	pop(); 
+
+	
+	
+	
 
 
 	push(); // red next to blue
@@ -221,114 +304,54 @@ if(cur_frac <= 0.6 && cur_frac >= 0.3){
 	scale(scaledSize);
 	rect(0, 0, 87, 78);
 	pop(); 
+
 	
-	push(); // static red
-	fill(mainRed);
-	stroke(0);
-	strokeWeight(4);
-	rectMode(CENTER); 
-	translate(390, 240); 
-	//scale(scaledSize);
-	rect(0, 0, 119, 79);
-	pop(); 
-
-	push(); // static blue
-	fill(mainBlue);
-	stroke(0);
-	strokeWeight(4);
-	rectMode(CENTER); 
-	translate(491, 270); 
-	//scale(scaledSize);
-	rect(0, 0, 82, 86);
-	pop(); 
 	
-	push(); // static blue
-	fill(mainBlue);
+	push(); //第一行第一个黄色
+	fill(mainYellow);
 	stroke(0);
-	strokeWeight(4);
+   strokeWeight(4);
 	rectMode(CENTER); 
-	translate(577, 226); 
-	//scale(scaledSize2);
-	rect(0, 0, 90, 54);
-	pop(); 
-
-	push(); // white
-	fill(255);
-	stroke(0);
-	strokeWeight(4);
-	rectMode(CENTER); 
-	translate(490.5, 220); 
+	translate(369, 100);
 	scale(scaledSize2);
-	rect(0, 0, 83, 39);
-	pop(); 
-
-
-	push();
-	fill(mainBlue);
-	//noStroke();
-	stroke(0);
-	strokeWeight(4);
-	rectMode(CENTER); 
-	translate(525.5, 165);
-	scale(scaledSize2);
-	rect(0, 0, 48.5, 30);
+	rect(0, 0, 80, 35);
 	pop();
 
-	push(); //static yellow
+
+
+	push(); //第一行第二个黄色
 	fill(mainYellow);
 	//noStroke();
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(536, 324);
-	//scale(scaledSize);
-	rect(0, 0, 172, 35);
-	pop();
-
-	
-
-	push(); // white down
-	fill(255);
-	stroke(0);
-	strokeWeight(4);
-	rectMode(CENTER); 
-	translate(577, 280); 
-	scale(scaledSize);
-	rect(0, 0, 88, 52);
-	pop(); 
-
-	push();
-	fill(mainRed);
-	//noStroke();
-	stroke(0);
-	strokeWeight(4);
-	rectMode(CENTER); 
-	translate(604, 370);
-	scale(scaledSize);
-	rect(0, 0, 25, 55);
-	pop();
-
-	push();
-	fill(mainBlue);
-	//noStroke();
-	stroke(0);
-	strokeWeight(4);
-	rectMode(CENTER); 
-	translate(652, 354);
-	scale(scaledSize);
-	rect(0, 0, 54, 28);
-	pop();
-
-	
-
-	push();
-	fill(mainBlue);
-	stroke(0);
-	strokeWeight(4);
-	rectMode(CENTER); 
-	translate(310, 305);
+	translate(525.5, 120);
 	scale(scaledSize2);
-	rect(0, 0, 38, 110);
+	rect(0, 0, 45, 120);
+	pop();
+
+
+	push(); //右边蓝和红之上的黄黄黄黄
+	fill(mainYellow);
+	//noStroke();
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(675, 304);
+	scale(scaledSize);
+	rect(0, 0, 60, 70);
+	pop();
+
+	
+
+	push(); //最左边蓝
+	fill(mainBlue);
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(310, 300);
+	scale(scaledSize2);
+	rect(0, 0, 38, 90);
 	pop();
 
 
