@@ -13,18 +13,9 @@ function draw_one_frame(cur_frac){
 	fill(backgroundColor);
 	rect(0, 0, width, height);
 ///////////////SET UP///////////////
-
-
-/////DRAW THE COLOR BLOCKS/////
 let mainRed = color("#de2100"); // red
-
 let mainYellow = color("#ffbf1c"); //yellow
-// let mainBlue = color("#3679d1"); //blue
 let mainBlue = color("#3733a1"); //blue
-let black = color("#00000");
-// mainRed.setAlpha(220); //https://p5js.org/reference/#/p5.Color/setAlpha
-// mainYellow.setAlpha(220);
-// mainBlue.setAlpha(220);
 
 let scaledSize;
 let scaledSize2;
@@ -36,15 +27,15 @@ if(cur_frac <= 0.5){
 }
 //movement 2
    if(cur_frac <= 0.5){
-	scaledSize2 = map(cur_frac, 0, 0.5, 1.13, 1); //color block expands
+	scaledSize2 = map(cur_frac, 0, 0.5, 1.13, 1); 
    } else {
-	scaledSize2 = map(cur_frac, 0.5, 1, 1, 1.13); //color block shrinks
+	scaledSize2 = map(cur_frac, 0.5, 1, 1, 1.13); 
    }
 //movement 3
 if(cur_frac <= 0.5){
-	scaledSize3 = map(cur_frac, 0, 0.5, 1.1, 1); //color block expands
+	scaledSize3 = map(cur_frac, 0, 0.5, 1.1, 1); 
    } else {
-	scaledSize3 = map(cur_frac, 0.5, 1, 1, 1.1); //color block shrinks
+	scaledSize3 = map(cur_frac, 0.5, 1, 1, 1.1); 
    }
 
 
@@ -272,7 +263,7 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(740, 354); 
+	translate(740, 374); 
 	rect(0, 0, 90, 90);
 	pop(); 
 
@@ -286,7 +277,7 @@ if(cur_frac <= 0.5){
 	rect(0, 0, 75, 58);
 	pop();
 
-	push(); // blue below white in th mid
+	push(); // blue below white ine th mid
 	fill(mainBlue);
 	stroke(0);
 	strokeWeight(4);
@@ -296,7 +287,7 @@ if(cur_frac <= 0.5){
 	rect(0, 0, 50, 90);
 	pop(); 
 
-	push(); // white in th mid
+	push(); // white in the mid
 	fill(255);
 	stroke(0);
 	strokeWeight(4);
