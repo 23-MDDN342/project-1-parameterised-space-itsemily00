@@ -7,16 +7,21 @@
      min/max: the minimum and maximum of the value to return
      smoothness: 1 means elements are not related. larger numbers cause groupings.
 */
+
 function draw_one_frame(cur_frac){
 	let backgroundColor = color("#fffff");
 	fill(backgroundColor);
 	rect(0, 0, width, height);
 ///////////////SET UP///////////////
-let rectX = 0;
-let rectY = 0;
+
+
+/////DRAW THE COLOR BLOCKS/////
 let mainRed = color("#de2100"); // red
+
 let mainYellow = color("#ffbf1c"); //yellow
+// let mainBlue = color("#3679d1"); //blue
 let mainBlue = color("#3733a1"); //blue
+let black = color("#00000");
 // mainRed.setAlpha(220); //https://p5js.org/reference/#/p5.Color/setAlpha
 // mainYellow.setAlpha(220);
 // mainBlue.setAlpha(220);
@@ -54,6 +59,7 @@ if(cur_frac <= 0.5){
 	vertical_lines(760, 60, 70);
 	vertical_lines(200, 70, 350-289.8);
 	vertical_lines(820, 450, 30);
+	vertical_lines(139, 360, 75);
 	pop();
 
     push();
@@ -64,12 +70,21 @@ if(cur_frac <= 0.5){
 
 /////DRAW THE COLOR BLOCKS/////
 ///Static blocks
+    push(); // blue above long balck bar on lower half
+	fill(mainBlue);
+	stroke(0);
+	strokeWeight(4);
+	rectMode(CENTER); 
+	translate(553, 335); 
+	rect(0, 0, 60, 100);
+	pop(); 
+
 	push(); //long small black on top left
 	fill(0);
 	noStroke();
 	rectMode(CENTER); 
 	translate(265, 100);
-	rect(rectX, rectY, 70, 30);
+	rect(0, 0, 70, 30);
 	pop();
 
 	push(); //red on top left
@@ -79,7 +94,7 @@ if(cur_frac <= 0.5){
 	rectMode(CENTER); 
 	translate(265-20, 125-0.1); 
 	scale(1);
-	rect(rectX, rectY, 130-40, 50.2);
+	rect(0, 0, 130-40, 50.2);
 	pop(); 
 
 	push(); // blue next to red on top left
@@ -89,7 +104,7 @@ if(cur_frac <= 0.5){
 	rectMode(CENTER); 
 	translate(310-1, 125-0.2-22.5); 
 	scale(1);
-	rect(rectX, rectY, 40, 50.2+45);
+	rect(0, 0, 40, 50.2+45);
 	pop(); 
 
 	push(); // yellow on the left middle
@@ -146,7 +161,7 @@ if(cur_frac <= 0.5){
 	rect(0, 0, 160, 20);
 	pop();
 
-	push(); //第一行第二个蓝色
+	push(); 
 	fill(mainBlue);
 	stroke(0);
 	strokeWeight(4);
@@ -155,7 +170,7 @@ if(cur_frac <= 0.5){
 	rect(0, 0, 85, 70);
 	pop();
 
-	push(); //yellow next to 第一行第二个蓝色
+	push(); 
 	fill(mainYellow);
 	stroke(0);
 	strokeWeight(4);
@@ -164,7 +179,7 @@ if(cur_frac <= 0.5){
 	rect(0, 0, 50);
 	pop();
 
-	push(); //red next to Row 1 2nd blue
+	push();
 	fill(mainRed);
 	stroke(0);
 	strokeWeight(4);
@@ -234,8 +249,6 @@ if(cur_frac <= 0.5){
 	rect(0, 0, 72, 90);
 	pop();
 
-
-
 	push(); // white bottom right
 	fill(255);
 	stroke(0);
@@ -254,13 +267,12 @@ if(cur_frac <= 0.5){
 	rect(0, 0, 60, 40);
 	pop(); 
 	
-	push(); // static blue
+	push();
 	fill(mainBlue);
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
 	translate(740, 354); 
-	//scale(scaledSize2);
 	rect(0, 0, 90, 90);
 	pop(); 
 
@@ -310,7 +322,6 @@ if(cur_frac <= 0.5){
 	translate(670, 131); 
 	rect(0, 0, 20, 200);
 	pop(); 
-	
 
 	push(); // white above small red
 	fill(255);
@@ -330,8 +341,6 @@ if(cur_frac <= 0.5){
 	rect(0, 0, 35, 30);
 	pop();
 
-	
-
 	push(); //vertical red
 	fill(mainRed);
 	stroke(0);
@@ -350,18 +359,9 @@ if(cur_frac <= 0.5){
 	//scale(scaledSize2);
 	rect(0, 0, 55, 80);
 	pop(); 
-
 	
 ///////////////////////////////////////////////
 ///COLOR BLOCKS WITH MOVEMENTS
-	push(); // blue above long balck
-	fill(mainBlue);
-	stroke(0);
-	strokeWeight(4);
-	rectMode(CENTER); 
-	translate(553, 335); 
-	rect(0, 0, 60, 100);
-	pop(); 
 
 	push(); // red above long balck
 	fill(mainRed);
@@ -391,11 +391,9 @@ if(cur_frac <= 0.5){
 	scale(scaledSize);
 	rect(0, 0, 145, 30);
 	pop(); 
-	
 
-
-	push(); // red big one in the middle
-    fill(lerpRed);
+	push(); // red big one in the middle slightly left
+	fill(mainRed);
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
@@ -403,9 +401,8 @@ if(cur_frac <= 0.5){
 	scale(scaledSize2);
 	rect(0, 0, 119, 79);
 	pop(); 
-
 	
-	push(); // white near square white
+	push(); 
 	fill(255);
 	stroke(0);
 	strokeWeight(4);
@@ -425,7 +422,7 @@ if(cur_frac <= 0.5){
 	rect(0, 0, 50, 65);
 	pop(); 
 	
-	push(); // big red on very left lower
+	push(); // big red on bottom left corner
 	fill(mainRed);
 	stroke(0);
 	strokeWeight(4);
@@ -435,7 +432,7 @@ if(cur_frac <= 0.5){
 	rect(0, 0, 87, 78);
 	pop(); 
 
-	push(); //white below vertical red
+	push(); //white below vertical red bar
 	fill(255);
 	stroke(0);
 	strokeWeight(4);
@@ -444,7 +441,7 @@ if(cur_frac <= 0.5){
 	rect(0, 0, 120, 50);
 	pop();
 	
-	push(); //Row 1 1st yellow
+	push(); //the 1st yellow on the top row
 	fill(mainYellow);
 	stroke(0);
    strokeWeight(4);
@@ -454,7 +451,7 @@ if(cur_frac <= 0.5){
 	rect(0, 0, 80, 35);
 	pop();
 
-	push(); //blue on far right
+	push(); //long blue on very right
 	fill(mainBlue);
 	stroke(0);
 	strokeWeight(4);
@@ -464,7 +461,7 @@ if(cur_frac <= 0.5){
 	rect(0, 0, 120, 25);
 	pop();
 
-	push(); 
+	push(); //the squred blue next to the tall red bar
 	fill(mainBlue);
 	stroke(0);
 	strokeWeight(4);
@@ -474,7 +471,7 @@ if(cur_frac <= 0.5){
 	rect(0, 0, 40);
 	pop();
 
-	push(); //Row 1 the 3rd blue
+	push(); //the 4th blue on the top row
 	fill(mainBlue);
 	stroke(0);
 	strokeWeight(4);
@@ -484,7 +481,7 @@ if(cur_frac <= 0.5){
 	rect(0, 0, 40, 140);
 	pop();
 
-	push(); // red next to white in th mid
+	push();
 	fill(mainRed);
 	stroke(0);
 	strokeWeight(4);
@@ -504,7 +501,7 @@ if(cur_frac <= 0.5){
 	rect(0, 0, 80, 70);
 	pop();
 
-	push(); //squre white
+	push(); 
 	fill(255);
 	stroke(0);
 	strokeWeight(4);
@@ -514,8 +511,7 @@ if(cur_frac <= 0.5){
 	rect(0, 0, 45);
 	pop();
 	
-
-	push(); //blue on far left
+	push(); 
 	fill(mainBlue);
 	stroke(0);
 	strokeWeight(4);
@@ -524,6 +520,7 @@ if(cur_frac <= 0.5){
 	scale(scaledSize2);
 	rect(0, 0, 38, 90);
 	pop();
+
 
 ////small decors
 	push(); 
@@ -577,7 +574,6 @@ if(cur_frac <= 0.5){
 	pop(); 
 
 }
-
 
 function horizontal_lines(lineX1, lineY1, lineLength){
 	stroke(0);
