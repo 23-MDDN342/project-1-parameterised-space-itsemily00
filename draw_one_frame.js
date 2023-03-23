@@ -19,6 +19,9 @@ let mainBlue = color("#3733a1"); //blue
 
 let scaledSize;
 let scaledSize2;
+
+
+
 //movement 1
 if(cur_frac <= 0.5){
  scaledSize = map(cur_frac, 0, 0.5, 1.1, 1.25); //color block expands
@@ -42,20 +45,20 @@ if(cur_frac <= 0.5){
 /////DRAW THE LINES/////
 	push();
 	strokeWeight(4);
-	horizontal_lines(820, 450, 70);
-	horizontal_lines(760, 124, 40);
-	horizontal_lines(100, 100, 100);
-	horizontal_lines(76.5, 368, 140)
+	horizontal_lines(width / 1.176, height / 1.19, width / 12);
+	horizontal_lines(width / 1.27, height / 4.32, width / 24.07);
+	horizontal_lines(width / 9.63, height / 5.36, width / 9.63);
+	horizontal_lines(width / 12.59, height / 1.455, height / 3.82)
 
-	vertical_lines(760, 60, 70);
-	vertical_lines(200, 70, 350-289.8);
-	vertical_lines(820, 450, 30);
-	vertical_lines(139, 360, 75);
+	vertical_lines(width / 1.27, height / 8.93, height / 7.66);
+	vertical_lines(width / 4.81, height / 7.66, height / 8.90);
+	vertical_lines(width / 1.175, height / 1.19, height / 17.6);
+	vertical_lines(width / 6.94, height / 1.49, height / 7.15);
 	pop();
 
     push();
 	strokeWeight(6);
-	vertical_lines(880, 430, 40);
+	vertical_lines(width / 1.09, height / 1.25, height / 13.4);
 	pop();
  
 
@@ -66,16 +69,17 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(553, 335); 
-	rect(0, 0, 60, 100);
+    translate(width / 1.74, height / 1.6);
+	rect(0, 0, width / 16.04, height/5.36);
+
 	pop(); 
 
 	push(); //long small black on top left
 	fill(0);
 	noStroke();
 	rectMode(CENTER); 
-	translate(265, 100);
-	rect(0, 0, 70, 30);
+	translate(width / 3.63, height / 5.36);
+	rect(0, 0, width / 13.76, height / 17.87);
 	pop();
 
 	push(); //red on top left
@@ -83,9 +87,8 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(265-20, 125-0.1); 
-	scale(1);
-	rect(0, 0, 130-40, 50.2);
+	translate(width/3.93, height/4.3);
+	rect(0, 0, width / 10.7, height / 10.68);
 	pop(); 
 
 	push(); // blue next to red on top left
@@ -93,9 +96,8 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(310-1, 125-0.2-22.5); 
-	scale(1);
-	rect(0, 0, 40, 50.2+45);
+	translate(width / 3.12, height / 5.23);
+	rect(0, 0, width / 23.07, height / 5.63);
 	pop(); 
 
 	push(); // yellow on the left middle
@@ -103,8 +105,8 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(290, 219); 
-	rect(0, 0, 119, 79);
+	translate(width / 3.32, height / 2.45);
+	rect(0, 0, width / 8.09, height / 6.78);
 	pop(); 
 
 	push(); // yellow on top right
@@ -112,9 +114,8 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(720, 144); 
-	scale(1);
-	rect(0, 0, 80, 40);
+	translate(width / 1.34, height / 3.72);
+	rect(0, 0, width / 12.035, height / 13.4);
 	pop(); 
 
 	push(); // static blue on the very left small small!
@@ -122,9 +123,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(185, 390); 
+	translate(width / 5.2, height / 1.37);
 	scale(1.1);
-	rect(0, 0, 15, 45);
+	rect(0, 0, width / 64.19, height / 11.91);
 	pop(); 
 
 	push(); // tall blue on bottom
@@ -132,24 +133,24 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(374, 420); 
-	rect(0, 0, 20, 150);
+	translate(width / 2.57, height / 1.276);
+	rect(0, 0, width / 48.14, height / 3.57);
 	pop(); 
 
 	push(); //static black 
 	fill(0);
 	noStroke();
 	rectMode(CENTER); 
-	translate(350, 150);
-	rect(0, 0, 40, 70);
+	translate(width / 2.751, height / 3.57);
+	rect(0, 0, width / 24.07, height / 7.66);
 	pop();
 
 	push(); //black on the right bottom
 	fill(0);
 	noStroke();
 	rectMode(CENTER); 
-	translate(615, 393);
-	rect(0, 0, 160, 20);
+	translate(width / 1.57, height / 1.36);
+	rect(0, 0, width / 6.02, height / 26.8);
 	pop();
 
 	push(); 
@@ -157,8 +158,8 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(395, 150);
-	rect(0, 0, 85, 70);
+	translate(width / 2.44, height / 3.57);
+	rect(0, 0, width / 11.33, height / 7.66);
 	pop();
 
 	push(); 
@@ -166,33 +167,33 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(463, 173);
-	rect(0, 0, 50);
+	translate(width / 2.08, height / 3.1);
+	rect(0, 0, width / 19.257, height / 10.72);
 	pop();
 
-	push();
+	push(); //horizontal red on top middle
 	fill(mainRed);
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(475, 133);
-	rect(0, 0, 76, 36);
+	translate(width / 2.03, height / 4.03);
+	rect(0, 0, width / 12.67, height / 14.89);
 	pop();
 
 	push(); //static black block in mid
 	fill(0);
 	noStroke();
 	rectMode(CENTER); 
-	translate(450, 257);
-	rect(0, 0, 185, 60);
+	translate(width / 2.14, height / 2.09);
+	rect(0, 0, width / 5.2, height / 8.93);
 	pop();
 
 	push(); // small rect yellow in lower mid
 	fill(mainYellow);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(510, 315);
-	rect(0, 0, 25, 60);
+	translate(width / 1.89, height / 1.7);
+	rect(0, 0, width / 38.514, height / 8.93);
 	pop();
 
 	push(); //black below long yellow on lower left
@@ -200,8 +201,8 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(324, 373);
-	rect(0, 0, 80, 10);
+	translate(width / 2.97, height / 1.44);
+	rect(0, 0, width / 12.04, height / 53.6);
 	pop();
 
 	push(); //small red next to tall blue bar
@@ -209,8 +210,8 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(402, 363);
-	rect(0, 0, 36);
+	translate(width / 2.395, height / 1.48);
+	rect(0, 0, width / 26.75);
 	pop();
 
 	push(); //long yellow on lower left
@@ -218,17 +219,17 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(251, 350);
-	rect(0, 0, 225, 35);
+	translate(width / 3.84, height / 1.53);
+	rect(0, 0, width / 4.28, height / 15.31);
 	pop();
 
-	push(); //small red on bottom right
+	push(); //small red on bottom left
 	fill(mainRed);
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(347, 322);
-	rect(0, 0, 50, 30);
+	translate(width / 2.77, height / 1.66);
+	rect(0, 0, width / 19.257, height / 17.8);
 	pop();
 
 	push(); //static yellow above very tall blue
@@ -236,8 +237,8 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(400, 300);
-	rect(0, 0, 72, 90);
+	translate(width / 2.41, height / 1.79);
+	rect(0, 0, width / 13.37, height / 5.96);
 	pop();
 
 	push(); // white bottom right
@@ -245,8 +246,8 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(730, 425); 
-	rect(0, 0, 180, 50);
+	translate(width / 1.32, height / 1.26); 
+	rect(0, 0, width / 5.35, height / 10.72);
 	pop(); 
 
 	push(); // yellow lower right
@@ -254,8 +255,8 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(613, 365); 
-	rect(0, 0, 60, 40);
+	translate(width / 1.57, height / 1.47); 
+	rect(0, 0, width / 16.04, height / 13.4);
 	pop(); 
 	
 	push();
@@ -263,8 +264,8 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(740, 374); 
-	rect(0, 0, 90, 90);
+	translate(width / 1.3, height / 1.43); 
+	rect(0, 0, width / 10.70);
 	pop(); 
 
 	push();
@@ -272,9 +273,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(581.4, 253);
+	translate(width / 1.656, height / 2.12);
 	scale(1.1);
-	rect(0, 0, 75, 58);
+	rect(0, 0, width / 12.838, height / 9.24);
 	pop();
 
 	push(); // blue below white ine th mid
@@ -282,9 +283,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(466, 280); 
+	translate(width / 2.066, height / 1.914); 
 	scale(1.2);
-	rect(0, 0, 50, 90);
+	rect(0, 0, width / 19.257, height / 5.96);
 	pop(); 
 
 	push(); // white in the mid
@@ -292,8 +293,8 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(490.5, 220); 
-	rect(0, 0, 83*1.2, 39*1.2);
+	translate(width / 1.96, height / 2.44); 
+	rect(0, 0, width / 9.8, height / 11.45);
 	pop(); 
 
 	push(); // yellow big one in the middle
@@ -301,8 +302,8 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(600, 186); 
-	rect(0, 0, 120, 85);
+	translate(width / 1.6, height / 2.88); 
+	rect(0, 0, width / 8.02, height / 6.3);
 	pop(); 
 
 	push(); // tall red on the top
@@ -310,8 +311,8 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(670, 131); 
-	rect(0, 0, 20, 200);
+    translate (width / 1.44, height / 4.09);
+	rect(0, 0, width / 48.14, height / 2.68);
 	pop(); 
 
 	push(); // white above small red
@@ -319,8 +320,8 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(344, 285); 
-	rect(0, 0, 40, 50);
+    translate(width / 2.801, height / 1.88);
+	rect(0, 0, width / 24.07, height / 10.12);
 	pop(); 
 
 	push(); //very small red next to white under
@@ -328,17 +329,17 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(735, 294);
-	rect(0, 0, 35, 30);
+	translate(width / 1.31, height / 1.82);
+	rect(0, 0, width / 27.51, height / 17.8);
 	pop();
 
-	push(); //vertical red
+	push(); //vertical red between blue and white on mid right
 	fill(mainRed);
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(633, 257.5);
-	rect(0, 0, 22, 55);
+	translate(width / 1.52, height / 2.086);
+	rect(0, 0, width / 43.77, height / 9.6);
 	pop();
 
 	push(); // yellow at bottom
@@ -346,9 +347,8 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(615, 440); 
-	//scale(scaledSize2);
-	rect(0, 0, 55, 80);
+	translate(width / 1.56, height / 1.23);
+	rect(0, 0, width /17.5, height / 6.7);
 	pop(); 
 	
 ///////////////////////////////////////////////
@@ -358,9 +358,9 @@ if(cur_frac <= 0.5){
 	fill(mainRed);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(660, 367);
+	translate(width / 1.46, height / 1.46);
 	scale(scaledSize3);
-	rect(0, 0, 80, 60);
+	rect(0, 0, width / 12.04, height / 8.93*1.1);
 	pop();
 
 	push(); // white at bottom left
@@ -368,9 +368,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(225, 400); 
+	translate(width / 4.28, height / 1.34); 
 	scale(scaledSize2);
-	rect(0, 0, 65, 65);
+	rect(0, 0, width / 14.81, height / 8.246);
 	pop(); 
 
 	push(); //white under red on top left
@@ -378,9 +378,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(251, 165); 
-	scale(scaledSize);
-	rect(0, 0, 145, 30);
+	translate(width / 3.84, height / 3.25); 
+	scale(scaledSize2);
+	rect(0, 0, width / 6.64*1.1, height / 17.8);
 	pop(); 
 
 	push(); // red big one in the middle slightly left
@@ -388,9 +388,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(389, 219); 
+	translate(width / 2.48, height / 2.45); 
 	scale(scaledSize2);
-	rect(0, 0, 119, 79);
+	rect(0, 0, width / 8.09, height / 6.78);
 	pop(); 
 	
 	push(); 
@@ -398,9 +398,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(457, 330); 
+	translate(width / 2.1, height / 1.62); 
 	scale(scaledSize2);
-	rect(0, 0, 79, 49);
+	rect(0, 0, width / 12.19, height / 10.94);
 	pop(); 
 
 	push(); // red bottom middle
@@ -408,9 +408,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(510, 370); 
+	translate(width / 1.88, height / 1.45); 
 	scale(scaledSize);
-	rect(0, 0, 50, 65);
+	rect(0, 0, width / 19.257, height / 8.25);
 	pop(); 
 	
 	push(); // big red on bottom left corner
@@ -418,9 +418,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(244, 290); 
+	translate(width / 3.95, height / 1.85); 
 	scale(scaledSize);
-	rect(0, 0, 87, 78);
+	rect(0, 0, width / 11.07, height / 6.87);
 	pop(); 
 
 	push(); //white below vertical red bar
@@ -428,8 +428,8 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER);
-	translate(704, 254);
-	rect(0, 0, 120, 50);
+	translate(width / 1.37, height / 2.11);
+	rect(0, 0, width / 8.02, height / 10.72);
 	pop();
 	
 	push(); //the 1st yellow on the top row
@@ -437,9 +437,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
    strokeWeight(4);
 	rectMode(CENTER); 
-	translate(369, 100);
+	translate(width / 2.61, height / 5.36);
 	scale(scaledSize2);
-	rect(0, 0, 80, 35);
+	rect(0, 0, width / 12.04, height / 15.31);
 	pop();
 
 	push(); //long blue on very right
@@ -447,9 +447,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(790, 170);
+	translate(width / 1.22, height / 3.15);
 	scale(scaledSize3);
-	rect(0, 0, 120, 25);
+	rect(0, 0, width / 8.02, height / 21.44);
 	pop();
 
 	push(); //the squred blue next to the tall red bar
@@ -457,9 +457,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(638, 140);
+	translate(width / 1.51, height / 3.83);
 	scale(scaledSize3);
-	rect(0, 0, 40);
+	rect(0, 0, width / 24.07, height / 13.4);
 	pop();
 
 	push(); //the 4th blue on the top row
@@ -467,9 +467,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(530, 135);
+	translate(width / 1.82, height / 3.97);
 	scale(scaledSize2);
-	rect(0, 0, 40, 140);
+	rect(0, 0, width / 24.07, height / 3.83);
 	pop();
 
 	push();
@@ -477,9 +477,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(558, 205); 
-	scale(scaledSize3);
-	rect(0, 0, 50);
+	translate(width / 1.73, height / 2.61); 
+	scale(scaledSize2);
+	rect(0, 0, width / 19.257);
 	pop(); 
 
 	push(); 
@@ -487,9 +487,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(680, 304);
+	translate(width / 1.42, height / 1.76);
 	scale(scaledSize);
-	rect(0, 0, 80, 70);
+	rect(0, 0, width / 12.04, height / 7.66);
 	pop();
 
 	push(); 
@@ -497,9 +497,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(540, 290);
+	translate(width / 1.78, height / 1.85);
 	scale(scaledSize3);
-	rect(0, 0, 45);
+	rect(0, 0, width / 21.40);
 	pop();
 	
 	push(); 
@@ -507,21 +507,21 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(4);
 	rectMode(CENTER); 
-	translate(310, 300);
+	translate(width / 3.1, height / 1.79);
 	scale(scaledSize2);
-	rect(0, 0, 38, 90);
+	rect(0, 0, width / 25.3, height / 5.96);
 	pop();
 
 
-////small decors
+////small squred decors
 	push(); 
 	fill(mainRed);
 	stroke(0);
 	strokeWeight(3.5);
 	rectMode(CENTER); 
-	translate(760, 230); 
+	translate(width / 1.27, height / 2.33); 
 	scale(scaledSize2);
-	rect(0, 0, 30, 30);
+	rect(0, 0, width / 32.095, height / 17.8);
 	pop(); 
 
 	push(); 
@@ -529,9 +529,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(3);
 	rectMode(CENTER); 
-	translate(683, 120); 
+	translate(width / 1.41, height / 4.47); 
 	scale(scaledSize);
-	rect(0, 0, 15);
+	rect(0, 0, width / 64.19, height / 35.73);
 	pop(); 
 
 	push(); 
@@ -539,9 +539,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(3.5);
 	rectMode(CENTER); 
-	translate(820, 410); 
+	translate(width / 1.17, height / 1.307); 
 	scale(scaledSize2);
-	rect(0, 0, 30);
+	rect(0, 0, width / 32.095, height / 17.8);
 	pop(); 
 
 	push(); 
@@ -549,9 +549,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(3.5);
 	rectMode(CENTER); 
-	translate(200, 145); 
+	translate(width / 4.8, height / 3.70); 
 	scale(scaledSize2);
-	rect(0, 0, 20);
+	rect(0, 0, width / 48.14, height / 26.8);
 	pop(); 
 
 	push(); 
@@ -559,9 +559,9 @@ if(cur_frac <= 0.5){
 	stroke(0);
 	strokeWeight(3.5);
 	rectMode(CENTER); 
-	translate(140, 335); 
-	scale(scaledSize);
-	rect(0, 0, 25);
+	translate(width / 6.88, height / 1.6); 
+	scale(scaledSize);//25
+	rect(0, 0, width / 38.51, height / 21.44);
 	pop(); 
 
 }
